@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # third-name-project
 
 ## Build Setup
@@ -67,3 +68,7 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+=======
+# posts-block
+simple tests block for testing nuxtjs features
+>>>>>>> fe5e8d19cdb9cb9b7a949c56bbb9a531331c7a65
