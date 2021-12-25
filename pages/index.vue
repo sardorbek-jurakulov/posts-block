@@ -3,14 +3,15 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
+    <app-post-list></app-post-list>
   </div>
 </template>
 
 <script>
-import PostPreview from '@/components/Posts/PostPreview.vue';
+import PostList from '@/components/Posts/PostList.vue';
 export default {
   components: {
-    appPostPreview: PostPreview, 
+    appPostList: PostList, 
   }
 }
 </script>
