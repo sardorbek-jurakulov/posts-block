@@ -25,12 +25,18 @@ import AppButton from '@/components/UI/AppButton.vue';
 export default {
   data() {
     return {
-      editedPost: {
+      editedPost: this.post ? { ...this.post } : {
         author: '',
         title: '',
         thumbnailLink: '',
         content: '',
       }
+    }
+  },
+  props: {
+    post: {
+      type: Object,
+      required: false,
     }
   },
   methods: {
@@ -45,6 +51,6 @@ export default {
   components: {
     AppControlInput,
     AppButton
-  }
+  },
 }
 </script>
