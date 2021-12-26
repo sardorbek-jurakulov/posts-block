@@ -1,6 +1,6 @@
 <template>
   <div class="posts-page">
-    <app-post-list></app-post-list>
+    <app-post-list isAdmin></app-post-list>
   </div>
 </template>
 
