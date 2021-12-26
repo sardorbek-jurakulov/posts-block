@@ -24,8 +24,8 @@
 </template>
 
 <script>
-import AppControlInput from '@/components/UI/AppControlInput.vue'
-import AppButton from '@/components/UI/AppButton.vue'
+import AppControlInput from '@/components/UI/AppControlInput.vue';
+import AppButton from '@/components/UI/AppButton.vue';
 export default {
   data() {
     return {
@@ -40,9 +40,10 @@ export default {
   methods: {
     onSave() {
       // Save the post
+      console.log(this.editedPost)
     },
     onCancel() {
-      // Navigate back
+      this.$router.push('/admin');
     }
   },
   components: {
