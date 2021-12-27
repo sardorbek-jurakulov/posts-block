@@ -17,6 +17,12 @@
   </div>
 </template>
 
+<script>
+export default {
+  
+}
+</script>
+
 <style scoped>
   .single-post-page {
   padding: 30px;
