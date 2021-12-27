@@ -15,12 +15,14 @@ export default {
   //     loadedPost: [],
   //   };
   // },
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
+  },
   components: {
     appPostList: PostList, 
   },
-  created() {
-    
-  }
 }
 </script>
 
