@@ -1,13 +1,7 @@
 <template>
   <div class="admin-new-post-page">
     <section class="new-post-form">
-<<<<<<< HEAD
-      <form action="http://echo.htmlacademy.ru" method="">
-        
-      </form>
-=======
       <AdminPostForm />
->>>>>>> 5b8438da6b3b9430a53f4ee12f4688bfc1954144
     </section>
   </div>
 </template>
