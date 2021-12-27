@@ -3,13 +3,25 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <app-post-list></app-post-list>
+    <app-post-list post=""></app-post-list>
   </div>
 </template>
 
 <script>
 import PostList from '@/components/Posts/PostList.vue';
 export default {
+  data() {
+    return {
+      loadedPost: [
+        {
+          id: 1,
+          title: 'First Post',
+          previewText: 'This is our first post!',
+          thumbnail: 'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/129668669/original/aac8282bcfe964e60b0753c8c8b04efe23a42207/design-you-static-website-in-vuejs-ans-nuxtjs.png',
+        }
+      ]
+    }
+  },
   components: {
     appPostList: PostList, 
   }
