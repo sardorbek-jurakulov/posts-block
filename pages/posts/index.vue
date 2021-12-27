@@ -52,11 +52,16 @@ export default {
       // reject(new Error());
     })
     .then(data => {
-      return data
+      context.store.commit('setPost', data.loadedPosts);
     })
     .catch(e => {
       context.error(new Error());
     });
+  },
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts;
+    }
   }
 }
 </script>
