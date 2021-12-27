@@ -10,11 +10,11 @@
 <script>
 import PostList from '@/components/Posts/PostList.vue';
 export default {
-  data() {
-    return {
-      loadedPost: [],
-    };
-  },
+  // data() {
+  //   return {
+  //     loadedPost: [],
+  //   };
+  // },
   asyncData(context, callback) {
     setTimeout(() => {
       callback(null, {
