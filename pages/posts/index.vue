@@ -11,7 +11,7 @@ export default {
   components: {
     appPostList: PostList,
   },
-  asyncData(context) {
+  fetch(context) {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         resolve({
@@ -57,9 +57,6 @@ export default {
     .catch(e => {
       context.error(new Error());
     });
-  },
-  created() {
-    this.$store.dispatch('setPosts', this.loadedPosts);
   }
 }
 </script>
