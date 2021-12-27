@@ -28,6 +28,7 @@ export default {
           previewText: 'This is our first post!',
           author: 'Sardorbek',
           updatedDate: new Data(),
+          content: '',
           thumbnail: 'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/129668669/original/aac8282bcfe964e60b0753c8c8b04efe23a42207/design-you-static-website-in-vuejs-ans-nuxtjs.png',
         }
       });
