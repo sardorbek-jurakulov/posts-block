@@ -19,7 +19,20 @@
 
 <script>
 export default {
-  
+  asuncData(context, callback) {
+    setTimeout(() => {
+      callback(null, {
+        loadedPost: {
+          id: '1',
+          title: 'First Post',
+          previewText: 'This is our first post!',
+          author: 'Sardorbek',
+          updatedDate: new Data(),
+          thumbnail: 'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/129668669/original/aac8282bcfe964e60b0753c8c8b04efe23a42207/design-you-static-website-in-vuejs-ans-nuxtjs.png',
+        }
+      });
+    }, 1000);
+  }
 }
 </script>
 
