@@ -1,12 +1,12 @@
 <template>
   <div class="single-post-page">
     <section class="post">
-      <h1 class="post-title">Title of the Post</h1>
+      <h1 class="post-title">{{ loadedPost.title }}</h1>
       <div class="post-details">
-        <div class="post-detail">Last updated on "Data"</div>
-        <div class="post-detail">Written by NAME</div>
+        <div class="post-detail">Last updated on {{ loadedPost.updatedDate }}</div>
+        <div class="post-detail">Written by {{ loadedPost.author }}</div>
       </div>
-      <p class="post-content">Content of the post</p>
+      <p class="post-content">{{ loadedPost.content }}</p>
     </section>
     <section class="post-feedback">
       <p>
@@ -19,15 +19,15 @@
 
 <script>
 export default {
-  asuncData(context, callback) {
+  asyncData(context, callback) {
     setTimeout(() => {
       callback(null, {
         loadedPost: {
           id: '1',
-          title: 'First Post',
+          title: 'First Post (ID: ' + context.route.params.id + ')',
           previewText: 'This is our first post!',
           author: 'Sardorbek',
-          updatedDate: new Data(),
+          updatedDate: new Date(),
           content: 'Some dummy text which is definitely not the preview text though!',
           thumbnail: 'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/129668669/original/aac8282bcfe964e60b0753c8c8b04efe23a42207/design-you-static-website-in-vuejs-ans-nuxtjs.png',
         }
