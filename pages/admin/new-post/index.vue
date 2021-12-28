@@ -7,6 +7,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import AdminPostForm from '@/components/Admin/AdminPostForm.vue';
 export default {
   layout: 'admin',
@@ -15,7 +16,9 @@ export default {
   },
   methods: {
     onSubmitted(postData) {
-
+      axios.post('https://nuxt-blog-bdbbe-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json', postData)
+        .then(result => console.log(result))
+        .catch(e => console.log(e));
     }
   }
 }
