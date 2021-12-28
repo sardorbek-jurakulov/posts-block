@@ -23,6 +23,12 @@
 import AppControlInput from '@/components/UI/AppControlInput.vue';
 import AppButton from '@/components/UI/AppButton.vue';
 export default {
+  props: {
+    post: {
+      type: Object,
+      required: false,
+    }
+  },
   data() {
     return {
       editedPost: this.post ? { ...this.post } : {
@@ -33,16 +39,10 @@ export default {
       }
     }
   },
-  props: {
-    post: {
-      type: Object,
-      required: false,
-    }
-  },
   methods: {
     onSave() {
       // Save the post
-      console.log(this.editedPost)
+      this.$emit('submit', this.editedPost)
     },
     onCancel() {
       this.$router.push('/admin');
