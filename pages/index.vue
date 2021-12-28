@@ -3,7 +3,7 @@
     <section class="intro">
       <h1>Get the latest tech news!</h1>
     </section>
-    <app-post-list :posts="loadedPost"></app-post-list>
+    <app-post-list :posts="loadedPosts"></app-post-list>
   </div>
 </template>
 
