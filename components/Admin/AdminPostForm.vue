@@ -2,11 +2,16 @@
   <form action="http://echo.htmlacademy.ru" method="post" @submit.prevent="onSave">
     <AppControlInput v-model="editedPost.author">Author Name</AppControlInput>
     <AppControlInput v-model="editedPost.title">Title</AppControlInput>
-    <AppControlInput v-model="editedPost.thumbnailLink">Thumbnail Link</AppControlInput>
+    <AppControlInput v-model="editedPost.thumbnail">Thumbnail Link</AppControlInput>
     <AppControlInput
       control-type="textarea"
       v-model="editedPost.content">
       Content
+    </AppControlInput>
+    <AppControlInput
+      control-type="textarea"
+      v-model="editedPost.previewText">
+      Preview Text
     </AppControlInput>
     <AppButton type="submit">Save</AppButton>
     <AppButton
@@ -32,17 +37,18 @@ export default {
   data() {
     return {
       editedPost: this.post ? { ...this.post } : {
-        author: '',
-        title: '',
-        thumbnailLink: '',
-        content: '',
+        author: "",
+        title: "",
+        thumbnail: "",
+        content: "",
+        previewText: "",
       }
     }
   },
   methods: {
     onSave() {
       // Save the post
-      this.$emit('submit', this.editedPost)
+      this.$emit('submit', this.editedPost);
     },
     onCancel() {
       this.$router.push('/admin');

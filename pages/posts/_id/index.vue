@@ -18,21 +18,16 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
-  asyncData(context, callback) {
-    setTimeout(() => {
-      callback(null, {
-        loadedPost: {
-          id: '1',
-          title: 'First Post (ID: ' + context.route.params.id + ')',
-          previewText: 'This is our first post!',
-          author: 'Sardorbek',
-          updatedDate: new Date(),
-          content: 'Some dummy text which is definitely not the preview text though!',
-          thumbnail: 'https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/129668669/original/aac8282bcfe964e60b0753c8c8b04efe23a42207/design-you-static-website-in-vuejs-ans-nuxtjs.png',
+  asyncData(context) {
+    return axios.get('https://nuxt-blog-bdbbe-default-rtdb.asia-southeast1.firebasedatabase.app/posts/' + context.params.id + '.json')
+      .then(res => {
+        return {
+          loadedPost: res.data,
         }
-      });
-    }, 1000);
+      })
+      .catch(e => context.error(e));
   }
 }
 </script>
