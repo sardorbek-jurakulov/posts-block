@@ -10,8 +10,10 @@
 import AdminPostForm from '@/components/Admin/AdminPostForm.vue';
 export default {
   layout: 'admin',
-  data() {
-    return {
+  asyncData(context) {
+    return get('https://nuxt-blog-bdbbe-default-rtdb.asia-southeast1.firebasedatabase.app/posts/' + context.params.id + '.json')
+      .then()
+      .catch(e => context.error(e));{
       loadedPost: {
         author: 'Sardorbek',
         title: 'My awesome Post',

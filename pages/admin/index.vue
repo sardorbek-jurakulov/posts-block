@@ -18,7 +18,12 @@ export default {
   components: {
     appPostList: PostList,
     AppButton,
-  }
+  },
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts;
+    }
+  },
 }
 </script>
 
