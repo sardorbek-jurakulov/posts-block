@@ -5,7 +5,9 @@
     </section>
     <section class="existing-posts">
       <h1>Existing Posts</h1>
-      <app-post-list isAdmin></app-post-list>
+      <app-post-list 
+        isAdmin
+        :posts="loadedPosts"></app-post-list>
     </section>
   </div>
 </template>
