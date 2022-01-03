@@ -38,13 +38,17 @@ const createStore = () => {
           updatedDate: new Date(),
         }
         return axios.post('https://nuxt-blog-bdbbe-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json', createdPost)
-        .then(result => {
+        .then(res => {
           vuexContext.commit('addPost', {...createdPost, id: res.data.name});
         })
         .catch(e => console.log(e));
       },
       editPost(vuexContext, editedPost) {
-        vuexContext.commit('editPost', editedPost);
+        return axios.put('https://nuxt-blog-bdbbe-default-rtdb.asia-southeast1.firebasedatabase.app/posts/' + editedPost.id + '.json', editedPost)
+        .then(res => {
+          vuexContext.commit('editPost', editedPost);
+        })
+        .catch(e => console.log(e));
       },
       setPosts(vuexContext, posts) {
         vuexContext.commit('setPost', posts)
