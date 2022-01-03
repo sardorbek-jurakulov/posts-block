@@ -32,6 +32,20 @@ const createStore = () => {
           })
           .catch(e => context.error(e));
       },
+      addPost(vuexContext, post) {
+        const createdPost = {
+          ...post, 
+          updatedDate: new Date(),
+        }
+        return axios.post('https://nuxt-blog-bdbbe-default-rtdb.asia-southeast1.firebasedatabase.app/posts.json', createdPost)
+        .then(result => {
+          vuexContext.commit('addPost', {...createdPost, id: res.data.name});
+        })
+        .catch(e => console.log(e));
+      },
+      editPost(vuexContext, editedPost) {
+        vuexContext.commit('editPost', editedPost);
+      },
       setPosts(vuexContext, posts) {
         vuexContext.commit('setPost', posts)
       }
