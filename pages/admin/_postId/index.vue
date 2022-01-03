@@ -26,7 +26,7 @@ export default {
     onSubmitted(editedPost) {
       axios.put('https://nuxt-blog-bdbbe-default-rtdb.asia-southeast1.firebasedatabase.app/posts/' + this.$route.params.postId + '.json', editedPost)
         .then(res => {
-          console.log(res);
+          this.$router.push('/admin');
         })
         .catch(e => console.log(e));
     },
