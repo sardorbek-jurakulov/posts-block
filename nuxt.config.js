@@ -51,5 +51,10 @@ export default {
 
   env: {
     baseUrl: process.env.BASE_URL || 'https://nuxt-blog-bdbbe-default-rtdb.asia-southeast1.firebasedatabase.app'
-  }
+  },
+
+  transition: {
+    name: 'page',
+    mode: 'out-in',
+  },
 }
