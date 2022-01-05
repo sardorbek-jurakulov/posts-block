@@ -18,7 +18,7 @@ export default {
     ]
   },
 
-  loading: { color: '#ff0', height: '40px', duration: 500000},
+  loading: { color: '#aaf', height: '40px', duration: 500000},
 
   loadingIndicator: {
     name: 'circle',
@@ -47,5 +47,9 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://nuxt-blog-bdbbe-default-rtdb.asia-southeast1.firebasedatabase.app'
   }
 }
