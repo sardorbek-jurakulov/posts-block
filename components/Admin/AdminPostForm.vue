@@ -25,8 +25,6 @@
 </template>
 
 <script>
-import AppControlInput from '@/components/UI/AppControlInput.vue';
-import AppButton from '@/components/UI/AppButton.vue';
 export default {
   props: {
     post: {
@@ -53,10 +51,6 @@ export default {
     onCancel() {
       this.$router.push('/admin');
     }
-  },
-  components: {
-    AppControlInput,
-    AppButton
   },
 }
 </script>

@@ -6,4 +6,4 @@ import PostList from '@/components/Posts/PostList';
 
 Vue.component('AppButton', AppButton);
 Vue.component('AppControlInput', AppControlInput);
-Vue.component('PostList', PostList);
+Vue.component('appPostList', PostList);

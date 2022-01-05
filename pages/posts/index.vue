@@ -5,12 +5,7 @@
 </template>
 
 <script>
-import PostList from '@/components/Posts/PostList.vue';
-
 export default {
-  components: {
-    appPostList: PostList,
-  },
   computed: {
     loadedPosts() {
       return this.$store.getters.loadedPosts;

@@ -8,7 +8,6 @@
 </template>
 
 <script>
-import PostList from '@/components/Posts/PostList.vue';
 export default {
   // data() {
   //   return {
@@ -19,9 +18,6 @@ export default {
     loadedPosts() {
       return this.$store.getters.loadedPosts;
     }
-  },
-  components: {
-    appPostList: PostList, 
   },
 }
 </script>
