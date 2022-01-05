@@ -18,7 +18,7 @@ export default {
     ]
   },
 
-  loading: { color: '#aaf', height: '40px', duration: 500000},
+  loading: { color: '#fcba03', height: '5px', duration: 500000},
 
   loadingIndicator: {
     name: 'circle',
@@ -54,7 +54,7 @@ export default {
   },
 
   transition: {
-    name: 'page',
+    name: 'fade',
     mode: 'out-in',
   },
 }
