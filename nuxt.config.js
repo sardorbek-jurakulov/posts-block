@@ -50,6 +50,7 @@ export default {
 
   axios: {
     baseURL: process.env.BASE_URL || 'https://nuxt-blog-bdbbe-default-rtdb.asia-southeast1.firebasedatabase.app',
+    credentials: false,
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
