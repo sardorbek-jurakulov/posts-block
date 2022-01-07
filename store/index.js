@@ -47,7 +47,7 @@ const createStore = () => {
         .catch(e => console.log(e));
       },
       editPost(vuexContext, editedPost) {
-        return this.$axios.$put(process.env.baseUrl + '/posts/' + editedPost.id + '.json', editedPost)
+        return this.$axios.$put(process.env.baseUrl + '/posts/' + editedPost.id + '.json?auth=' + vuexContext.state.token, editedPost)
         .then(res => {
           vuexContext.commit('editPost', editedPost);
         })
