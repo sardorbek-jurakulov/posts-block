@@ -59,7 +59,7 @@ export default {
 
   env: {
     baseUrl: process.env.BASE_URL || 'https://nuxt-blog-bdbbe-default-rtdb.asia-southeast1.firebasedatabase.app',
-    fbAPIKey: 'AAAAXgcF5es:APA91bEzJs1fuQUHwPoxrFZgsOBma_KLMQOIngX8vju9EAmS6weCqVMK1wr2Zfm3mXXKYS7Q7IfStNR8feMOW7g6eR7mbzqM76GOVD0KQtb4BNflbxFWsif44ZFeZHw8NHQmcjP5UQRe',
+    fbAPIKey: 'AIzaSyDpspJgoY6e8Jd0XBh7MIeWq1oDB99SFKk',
   },
 
   transition: {
