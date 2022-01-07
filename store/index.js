@@ -3,7 +3,8 @@ import Vuex from 'vuex';
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      loadedPosts: []
+      loadedPosts: [],
+      token: null,
     },
     mutations: {
       setPost(state, posts) {
@@ -18,6 +19,9 @@ const createStore = () => {
         );
         state.loadedPosts[postIndex] = editedPost;
       },
+      setToken(state, token) {
+        state.token = token
+      }
     },
     actions: {
       nuxtServerInit(vuexContext, context) {
@@ -52,22 +56,21 @@ const createStore = () => {
       setPosts(vuexContext, posts) {
         vuexContext.commit('setPost', posts)
       },
-      authenticateUser(state, authData) {
+      authenticateUser(vuexContext, authData) {
         let authUrl = 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' + process.env.fbAPIKey;
 
-      if(!authData.isLogin) {
+        if(!authData.isLogin) {
         authUrl = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + process.env.fbAPIKey;
-      }
+        }
       
-      this.$axios.$post(authUrl, {
-        email: authData.email,
-        password: authData.password,
-        returnSecureToken: true,
-       }
-      ).then(result => {
-        console.log(result);
-      })
-      .catch(e => console.log(e));
+        return this.$axios.$post(authUrl, {
+          email: authData.email,
+          password: authData.password,
+          returnSecureToken: true,
+        }
+        ).then(result => {
+          vuexContext.commit('setToken', result.idToken);
+        }).catch(e => console.log(e));
       }
     },
     getters: {
