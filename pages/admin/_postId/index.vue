@@ -12,6 +12,7 @@
 import AdminPostForm from '@/components/Admin/AdminPostForm.vue';
 export default {
   layout: 'admin',
+  middleware: 'auth',
   asyncData(context) {
     return context.app.$axios.$get(process.env.baseUrl + '/posts/' + context.params.postId + '.json')
       .then(data => {
