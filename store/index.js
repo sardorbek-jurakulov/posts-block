@@ -81,12 +81,9 @@ const createStore = () => {
           vuexContext.dispatch('setLogoutTimer', result.expiresIn * 1000);
         }).catch(e => console.log(e));
       },
-      setLogoutTimer(vuexContext, duration) {
-        setTimeout(() => {
-          vuexContext.commit('clearToken');
-        }, duration);
-      },
       initAuth(vuexContext, req) {
+        let token;
+        let expirationDate;
         if(req == true) {
           if(!req.headers.cookie) {
             return;
@@ -97,20 +94,18 @@ const createStore = () => {
           if(!jwtCookie) {
             return;
           }
-          const token = jwtCookie.split('=')[1];
-          const expirationDate = req.headers.cookie
+          token = jwtCookie.split('=')[1];
+          expirationDate = req.headers.cookie
             .split(';')
             .find(c => c.trim().startsWith('exporationDate='))
             .split('=')[1];
         } else {
-          const token = localStorage.getItem('token');
-          const expirationDate = localStorage.getItem('tokenExpiration');
-
+          token = localStorage.getItem('token');
+          expirationDate = localStorage.getItem('tokenExpiration');
           if (new Date().getTime() > +expirationDate || !token) {
             return;
           }
         }
-        vuexContext.dispatch('setLogoutTimer', +expirationDate - new Date().getTime());
         vuexContext.commit('setToken', token);
       },
     },
