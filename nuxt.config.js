@@ -74,5 +74,6 @@ export default {
   // }
   serverMiddleware: [
     bodyParser.json(),
+    '~/api'
   ]
 }
