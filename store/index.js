@@ -23,7 +23,7 @@ const createStore = () => {
       setToken(state, token) {
         state.token = token
       },
-      clearToken() {
+      clearToken(state) {
         state.token = null;
       }
     },
