@@ -101,7 +101,6 @@ const createStore = () => {
         } else {
           token = localStorage.getItem('token');
           expirationDate = localStorage.getItem('tokenExpiration');
-          console.log(new Date().getTime(), +expirationDate)
           if (new Date().getTime() > +expirationDate || !token) {
             console.log('No token or invalid token')
             vuexContext.commit('clearToken');
