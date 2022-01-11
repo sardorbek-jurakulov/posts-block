@@ -70,4 +70,5 @@ export default {
   // router: {
   //   middleware: 'log',
   // }
+  serverMiddleware: []
 }
